@@ -43,7 +43,8 @@
     ```
     ifconfig
     ```
-## Step 3: In you computer. Install [VNC viewer](https://www.realvnc.com/en/connect/download/viewer/) and add ip JetsonTX2.
+## Step 3: In you computer. Install [VNC viewer](https://www.realvnc.com/en/connect/download/viewer/) and enjoy it
+.
 
 ***
 
