@@ -109,27 +109,60 @@ rosdep update
     sudo kill -9 <process_id>
     ```
 2. Some packages I see are necessary(Copy - Paste below):
-    ```
-    sudo apt update
-    sudo apt upgrade
-    sudo apt install python-pip
-    sudo apt install libhdf5-serial-dev hdf5-tools
-    sudo apt-get install openjdk-8-jdk 
-    sudo apt-get install libblas-dev liblapack-dev
-    sudo apt-get install libfreetype6-dev pkg-config libpng12-dev
+    
+    2.1. Update Python to 3.6 or 3.7(2.7 EOL on January 1st, 2020)
+    
+    * STEP 2.1.1: Install ppa
+        ```
+        sudo apt update
+        sudo apt upgrade
+        sudo add-apt-repository ppa:deadsnakes/ppa
+        ```
+        Update packages
+        ```
+        sudo apt-get update
+        ```
 
-    pip install pip==9.0.1
-    pip install numpy
-    pip install panda
+    * Step 2.1.2: Upgrade python 2.x to python 3.x
+        
+        Before install 3.7, we should have to install python 3.6 by running the following command.
+        ```
+        sudo apt-get install python3.6
+        sudo apt-get install python3.7
+        ```
+    * Step 2.1.3: PiP installation
+        ```
+        sudo apt install python3-pip
+        ```
+    * Step 2.1.4: Set priority
+        ```
+        sudo update-alternatives — install /usr/bin/python3 python3 /usr/bin/python3.6 1
+        ```
+        ```
+        sudo update-alternatives — install /usr/bin/python3 python3 /usr/bin/python3.7 2
+        ```
+    
+        After that,
 
-    pip install cython
-    pip install scipy==1.2.0
-    pip install matplotlib
-    pip install 'scikit-image<0.15'
+        ```
+        sudo apt install python-pip
+        sudo apt install libhdf5-serial-dev hdf5-tools
+        sudo apt-get install openjdk-8-jdk 
+        sudo apt-get install libblas-dev liblapack-dev
+        sudo apt-get install libfreetype6-dev pkg-config libpng-dev
+        
+        pip install pip==9.0.1
+        pip install numpy
+        pip install panda
+
+        pip install cython
+        pip install scipy==1.2.0
+        pip install matplotlib
+        pip install 'scikit-image<0.15'
     
 
-    sudo pip install -U numpy enum34 grpcio absl-py py-cpuinfo psutil portpicker six mock requests gast h5py astor termcolor protobuf keras-applications keras-preprocessing wrapt google-pasta
+        sudo pip install -U numpy enum34 grpcio absl-py py-cpuinfo psutil portpicker six mock requests gast h5py astor termcolor protobuf keras-applications keras-preprocessing wrapt google-pasta
 
-    pip install keras --user
-    ```
+        pip install keras --user
+        ```
 3. Udate soon...
